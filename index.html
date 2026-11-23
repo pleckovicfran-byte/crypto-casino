@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casino Profit System </title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #100d13;
+    color: #f5f0e6;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    padding: 25px 15px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #19151e;
+    border: 1px solid #8d7138;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 60px rgba(0,0,0,.5);
+}
+
+.top {
+    text-align: center;
+    padding: 55px 30px;
+    background: linear-gradient(145deg, #342718, #17121d 75%);
+    border-bottom: 1px solid #80652f;
+}
+
+.logo {
+    font-size: 58px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 17px;
+    border: 1px solid #c9a44e;
+    border-radius: 30px;
+    color: #f5d477;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+h1 {
+    font-size: clamp(30px, 6vw, 49px);
+    color: #f3d47c;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.subtitle {
+    color: #c6bdc9;
+    font-size: 16px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.content {
+    padding: 35px;
+}
+
+.section {
+    margin-bottom: 35px;
+}
+
+h2 {
+    color: #e8c66d;
+    font-size: 25px;
+    margin-bottom: 16px;
+}
+
+p {
+    color: #d1cbd5;
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.highlight {
+    color: #f3d47c;
+    font-weight: bold;
+}
+
+.notice {
+    background: #2b2215;
+    border-left: 4px solid #c9a44e;
+    border-radius: 8px;
+    padding: 18px;
+    color: #f0d99c;
+    margin: 22px 0;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.step {
+    background: #211b27;
+    border: 1px solid #51412d;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.step-number {
+    color: #c9a44e;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.step h3 {
+    color: #f3d47c;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.step p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.profit-card {
+    background: linear-gradient(135deg, #382c19, #211a27);
+    border: 1px solid #b38b39;
+    border-radius: 15px;
+    padding: 28px;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.profit-label {
+    color: #e7cf91;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.profit-amount {
+    color: #ffdf80;
+    font-size: clamp(38px, 8vw, 58px);
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.profit-percent {
+    color: #8ed6a0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    background: #211b27;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #403445;
+    color: #ddd5e2;
+    font-size: 14px;
+}
+
+td:last-child {
+    text-align: right;
+    color: #f3d47c;
+    font-weight: bold;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.contact {
+    text-align: center;
+    padding: 38px 25px;
+    background: linear-gradient(145deg, #332718, #201824);
+    border: 1px solid #9c7936;
+    border-radius: 14px;
+    margin-top: 30px;
+}
+
+.contact h2 {
+    font-size: 27px;
+}
+
+.email {
+    display: block;
+    color: #ffdc77;
+    font-size: clamp(17px, 4vw, 27px);
+    font-weight: bold;
+    margin-top: 20px;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: #100d13;
+    color: #93899b;
+    font-size: 12px;
+    border-top: 1px solid #493a2a;
+}
+
+.footer strong {
+    color: #e3c36e;
+}
+
+@media(max-width: 600px) {
+    .content {
+        padding: 23px 18px;
+    }
+
+    .top {
+        padding: 40px 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="top">
+        <div class="logo">🎰</div>
+
+        <div class="tag">
+            Rupa u kazinu projekt
+        </div>
+
+        <h1>CASINO PROFIT SYSTEM</h1>
+
+        <p class="subtitle">
+            Upoznajte casino strategije,
+            analize sustava i zagarantirane financijske rezultate.
+        </p>
+    </header>
+
+    <main class="content">
+
+        <section class="section">
+            <h2>Naša priča</h2>
+
+            <p>
+                Prije nekoliko godina, tijekom analiziranja različitih
+                online casino igara, uočili smo zanimljiv obrazac i
+                definitivnu nepravilnost u načinu funkcioniranja određenih igara.
+            </p>
+
+            <p>
+                Kroz daljnje testiranje razvili smo
+                strategiju koja prikazuje kako bi se takva nepravilnost
+                mogla analizirati i kakve bi rezultate mogla pokazati.
+            </p>
+
+            <div class="notice">
+                <strong>VAŽNO </strong>
+                Mi nemamo nikakvo sponzorstvo sa kazinom.
+                Sav dobiveni prihod ostvarujete vi.
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Kako funkcionira?</h2>
+
+            <div class="steps">
+
+                <div class="step">
+                    <div class="step-number">KORAK 01</div>
+                    <h3>Početni depozit</h3>
+                    <p>
+                       Minimalni početni deposit iznosi 20.00€. Što više uložite, to će te više dobiti. Minimalni dobitak od deposita iznosi puta 3.97 (3.97x)
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">KORAK 02</div>
+                    <h3>Analiza sustava</h3>
+                    <p>
+                       Kupujemo tkzv. bonus buy na igrama poput Sweet bonanza 1000, Gates of Olympus 1000 i Sugar rush 1000 zato što smo na njima izračunali največi potencijalni dobitak.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">KORAK 03</div>
+                    <h3>Obrada strategije</h3>
+                    <p>
+                        Novac koji dobijemo na tome bonus buy-u direktno prelazi u nasljedstvo vama.
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">KORAK 04</div>
+                    <h3>Prikaz rezultata</h3>
+                    <p>
+                        Na kraju se prikazuje ukupni dobitak, pogođena kvota, isplata i naša očekivanja.
+                  
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Primjer financijskog rezultata</h2>
+
+            <div class="profit-card">
+                <div class="profit-label">
+                    PRIKAZANI UKUPNI DOBITAK 
+                </div>
+
+                <div class="profit-amount">300,00 €</div>
+
+                <div class="profit-percent">
+                    +1.400 % PROFIT 
+                </div>
+            </div>
+
+            <table>
+                <tr>
+                    <td>Početni depozit </td>
+                    <td>20,00 €</td>
+                </tr>
+
+                <tr>
+                    <td>Ukupni dobitak </td>
+                    <td>300,00 €</td>
+                </tr>
+
+                <tr>
+                    <td>Početni ulog </td>
+                    <td>20,00 €</td>
+                </tr>
+
+                <tr>
+                    <td>Prikazani profit </td>
+                    <td>280,00 €</td>
+                </tr>
+            </table>
+
+            <p style="margin-top:18px;font-size:13px;">
+                Svi iznosi i postoci predstavljaju stvarni iznos osvojen na casino igrama.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Povlačenje sredstava</h2>
+
+            <p>
+                Prikazujemo i kako bi izgledao postupak
+                povlačenja sredstava, uključujući primjere isplate u
+                kriptovalutama.
+            </p>l
+
+            <p>
+                Prikazani iznosi, transakcije, rokovi obrade i postupci
+                povlačenja javiti će Vam naše osoblje.
+            </p>
+        </section>
+
+        <section class="contact">
+            <h2>Kontaktirajte nas</h2>
+
+            <p>
+                Želite saznati više o rupi u kazinu,
+                njegovu načinu rada i prikazanim rezultatima?
+            </p>
+
+            <p>
+                Za dodatne informacije javite nam se putem e-maila:
+            </p>
+
+            <a class="email"
+               href="mailto:cryptowithdraw@tutamail.com">
+                CRYPTOWITHDRAW@TUTAMAIL.COM
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <strong>Since 2021.</strong>
+
+        <br><br>
+
+        Naknada mreže (Network fees) automatski se oduzima od iznosa kojeg ste osvojili. Naknada obično iznosi oko 0.01% i 0.10%.
+        <br>
+
+        Ovo bi mogla biti vaša prilika. Mjesta su ograničena 
+
+        <br>
+
+        Za sva pitanja i željom za početak, kontaktirajte naše osoblje cryptowithdraw@tutamail.com
+    </footer>
+
+</div>
+
+</body>
+</html>
